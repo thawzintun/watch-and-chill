@@ -10,10 +10,10 @@ const Movie = () => {
     return (
         <>
             <div className="content">
-                <h1>{param.title}</h1>
+                <h1>Have Fun Watching Movies!</h1>
             </div>
             <div className="center">
-                <h2>Hello, you choose "Comedy 2".</h2>
+                <h2>Hello, you choose "{param.title}".</h2>
                 <button onClick={navigateHandler}>Go Back to Home</button>
             </div>
         </>

@@ -1,16 +1,14 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import { Outlet } from "react-router-dom";
-import TopRated from "../pages/TopRated";
+import Navbar from "../components/Navbar";
 
-const Main = () => {
+const Detail = () => {
     return (
         <section className="bg-[#252525]">
             <Navbar />
-            <TopRated />
             <Outlet />
         </section>
     );
 };
 
-export default Main;
+export default Detail;

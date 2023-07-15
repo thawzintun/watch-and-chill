@@ -1,36 +1,38 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Main from "./layout/Main";
-import Home from "./pages/Home";
-import Categories from "./pages/Categories";
-import About from "./pages/About";
-import Movies from "./pages/Movies";
-import Movie from "./pages/Movie";
+import Popular, { loader as popularLoader } from "./pages/Popular";
+import { loader as topRatedLoader } from "./pages/TopRated";
+import Upcoming, { loader as upcomingLoader } from "./pages/Upcoming";
+import Detail from "./layout/Detail";
+import MovieDetail, { loader as MovieDetailLoader } from "./pages/MovieDetail";
 
 function App() {
     const router = createBrowserRouter([
         {
             path: "/",
             element: <Main />,
+            loader: topRatedLoader,
             children: [
                 {
                     index: true,
-                    element: <Home />,
+                    element: <Popular />,
+                    loader: popularLoader,
                 },
                 {
-                    path: "/categories",
-                    element: <Categories />,
+                    path: "/upcoming",
+                    element: <Upcoming />,
+                    loader: upcomingLoader,
                 },
+            ],
+        },
+        {
+            path: "/detail/:id",
+            element: <Detail />,
+            children: [
                 {
-                    path: "/categories/:category",
-                    element: <Movies />,
-                },
-                {
-                    path: "/categories/:category/:title",
-                    element: <Movie />,
-                },
-                {
-                    path: "/about",
-                    element: <About />,
+                    path: "/detail/:id",
+                    element: <MovieDetail />,
+                    loader: MovieDetailLoader,
                 },
             ],
         },

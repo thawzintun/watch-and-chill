@@ -1,8 +1,7 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 
 const Navbar = () => {
-    const navigate = useNavigate();
     return (
         <nav className="flex items-center justify-between text-white bg-black px-10 py-4">
             <NavLink className=" text-3xl font-bold font-mono" to={"/"}>

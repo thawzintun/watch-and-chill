@@ -6,7 +6,7 @@ const Upcoming = () => {
     const data = useLoaderData();
     const popularMovies = data.results;
     return (
-        <div className=" px-20 py-14">
+        <div className=" px-20 py-14 bg-[#252525]">
             <h1 className=" text-white text-3xl font-mono underline">
                 UPCOMING MOVIES
             </h1>

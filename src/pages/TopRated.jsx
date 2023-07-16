@@ -8,13 +8,14 @@ const TopRated = () => {
     const data = useLoaderData();
     const topRatedMovies = data.results;
     return (
-        <div className="relative bg-[#252525]">
+        <div className="">
             <Splide
                 options={{
                     type: "loop",
                     autoplay: true,
                     pagination: false,
                 }}
+                className=""
             >
                 {topRatedMovies.map((movie) => (
                     <SplideSlide key={movie.id}>

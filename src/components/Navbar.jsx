@@ -1,7 +1,14 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
+import { useState } from "react";
 
 const Navbar = () => {
+    const [searchKey, setSearchKey] = useState("");
+    const navigate = useNavigate();
+    const searchHandler = (e) => {
+        e.preventDefault();
+        navigate(`/search/${searchKey}`);
+    };
     return (
         <nav className="flex items-center justify-between text-white bg-black px-10 py-4">
             <NavLink className=" text-3xl font-bold font-mono" to={"/"}>
@@ -25,14 +32,18 @@ const Navbar = () => {
                     Upcomings
                 </NavLink>
             </div>
-            <form className="flex items-center">
+            <form className="flex items-center" onSubmit={searchHandler}>
                 <input
                     type="text"
                     name=""
                     id=""
                     className="text-xl bg-transparent border-b border-slate-300 focus:outline-none"
+                    value={searchKey}
+                    onChange={(e) => setSearchKey(e.target.value)}
                 />
-                <MagnifyingGlassIcon className=" w-6 h-6" />
+                <button>
+                    <MagnifyingGlassIcon className=" w-6 h-6" />
+                </button>
             </form>
         </nav>
     );

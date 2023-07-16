@@ -1,19 +1,19 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { PlayIcon } from "@heroicons/react/24/solid";
+import Navbar from "../components/Navbar";
 
 const MovieDetail = () => {
     const movie = useLoaderData();
-    console.log(movie);
     return (
-        <section className="w-full h-screen relative">
-            <div className="h-2/3 relative">
+        <section className="h-screen bg-[#252525]">
+            <Navbar />
+            <div className="h-fit">
                 <img
                     src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
                     alt=""
-                    className=" h-full w-full object-cover object-top"
+                    className="absolute w-full h-3/5 object-top object-cover left-50 top-50 brightness-75"
                 />
-                <div className="dark-ov"></div>
             </div>
             <div className="w-1/2 m-auto p-4 flex items-start justify-center -mt-5 absolute top-2/3 left-1/2 -translate-x-1/2 -translate-y-1/2 card-bg">
                 <img

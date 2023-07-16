@@ -8,9 +8,8 @@ const HeaderCard = ({ movie }) => {
             <img
                 src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
                 alt={movie.title}
-                className="w-full h-full object-cover"
-            />{" "}
-            <div className="dark-ov"></div>
+                className="h-full w-full object-cover left-50 top-50 brightness-75"
+            />
             <div className="absolute z-20 text-white left-20 top-1/2 -translate-y-1/2 w-2/5">
                 <h1 className="text-5xl font-extrabold">{movie.title}</h1>
                 <p className="font-medium text-lg my-3 text-justify">

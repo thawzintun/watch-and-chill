@@ -11,11 +11,19 @@ const Card = ({ movie }) => {
             onMouseOver={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
         >
-            <img
-                src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-                alt=""
-                className="w-full object-cover"
-            />
+            {movie.poster_path ? (
+                <img
+                    src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+                    alt=""
+                    className="w-full h-64"
+                />
+            ) : (
+                <img
+                    src="https://movieeo.com/no-poster.png"
+                    alt=""
+                    className="w-full h-60"
+                />
+            )}
             <div className="dark-ov absolute"></div>
             <PlayCircleIcon
                 className={`text-white w-14 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 absolute ${

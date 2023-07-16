@@ -7,7 +7,7 @@ const Navbar = () => {
     const navigate = useNavigate();
     const searchHandler = (e) => {
         e.preventDefault();
-        navigate(`/search/${searchKey}`);
+        searchKey && navigate(`/search/${searchKey}`);
     };
     return (
         <nav className="flex items-center justify-between text-white bg-black px-10 py-4">

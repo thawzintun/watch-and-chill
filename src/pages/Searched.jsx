@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Card from "../components/Card";
 

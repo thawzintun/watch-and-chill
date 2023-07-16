@@ -22,9 +22,7 @@ const MovieDetail = () => {
                     className="w-52 rounded-md"
                 />
                 <div className="text-white ms-4">
-                    <h1 className=" text-4xl font-semibold">
-                        {movie.original_title}
-                    </h1>
+                    <h1 className=" text-4xl font-semibold">{movie.title}</h1>
                     <p className=" text-lg mb-2 ">
                         <span className=" text-red-500 font-medium">
                             Released On :{" "}
